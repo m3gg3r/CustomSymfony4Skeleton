@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "16d9524080dbd796d839f0e97314a3b9",
+    "content-hash": "982fda275616e97afec6a32f66abc3a3",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -5748,6 +5748,49 @@
                 "stub"
             ],
             "time": "2017-11-24T13:59:53+00:00"
+        },
+        {
+            "name": "se/selenium-server-standalone",
+            "version": "3.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sveneisenschmidt/selenium-server-standalone.git",
+                "reference": "60b5d9502eafb268d05ad9459dff09464af666f4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sveneisenschmidt/selenium-server-standalone/zipball/60b5d9502eafb268d05ad9459dff09464af666f4",
+                "reference": "60b5d9502eafb268d05ad9459dff09464af666f4",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "bin": [
+                "bin/selenium-server-standalone"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Sven Eisenschmidt",
+                    "email": "sven.eisenschmidt@gmail.com"
+                },
+                {
+                    "name": "James Titcumb",
+                    "email": "hello@jamestitcumb.com"
+                }
+            ],
+            "description": "Composer distribution of Selenium Server Standalone, the browser automation framework. Adds a executable to your composer bin directory.",
+            "homepage": "https://github.com/sveneisenschmidt/selenium-server-standalone",
+            "keywords": [
+                "selenium",
+                "testing"
+            ],
+            "time": "2018-02-07T20:19:47+00:00"
         },
         {
             "name": "sebastian/comparator",
