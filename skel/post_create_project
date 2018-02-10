@@ -1,0 +1,127 @@
+#!/usr/bin/php
+<?php
+
+$projectname            = basename(realpath('.'));
+$lowercaseProjectname   = strtolower($projectname);
+$capitalizedProjectname = ucfirst($projectname);
+
+$replaces = [
+    '/\{\{\s*projectname\s*\}\}/i'              => $projectname,
+    '/\{\{\s*lowercase_projectnamer\s*\}\}/i'   => $lowercaseProjectname,
+    '/\{\{\s*capitalized_projectname\s*\}\}/i'  => $capitalizedProjectname,
+];
+
+printLine();
+echo '  Project created: ' . $projectname . PHP_EOL;
+echo '  Lowercase project name: ' . $lowercaseProjectname . PHP_EOL;
+echo '  Capitalized project name: ' . $capitalizedProjectname . PHP_EOL;
+echo '  Current working directory: ' . getcwd() . PHP_EOL;
+printLine();
+echo PHP_EOL;
+
+
+replacePlaceholdersInProject($replaces);
+copySkeletonFiles();
+cleanup();
+
+echo PHP_EOL;
+printLine();
+echo '  Finished creating project: ' . $projectname . PHP_EOL;
+printLine();
+echo PHP_EOL;
+
+// end of program
+return 0;
+
+
+
+function replacePlaceholdersInProject($replaces)
+{
+    $directoryContents = new RecursiveIteratorIterator(new RecursiveDirectoryIterator('.'));
+    /** @var SplFileInfo $file */
+    foreach ($directoryContents as $file) {
+        if ($file->isFile() === false || strpos($file->getPath(), '.git/') !== false) {
+            continue;
+        }
+
+        replacePlaceholders($file->getRealPath(), $replaces);
+    }
+}
+
+function copySkeletonFiles()
+{
+    $base = './skel/templates/';
+    $directoryContents = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($base));
+    /** @var SplFileInfo $file */
+    foreach ($directoryContents as $file) {
+        if ($file->isFile() === false) {
+            continue;
+        }
+        $targetDir = substr($file->getPath(), strlen($base)) ?: '.';
+        $targetFilename = $targetDir . '/' . $file->getFilename();
+
+        if (is_dir($targetDir) === false) {
+            mkdir($targetDir, 0777, true);
+        }
+
+        copy($file->getPathname(), $targetFilename);
+
+        echo "Copy template file  {$file->getPathname()}  to  {$targetFilename}".PHP_EOL;
+    }
+}
+
+function moveFileWithEcho($old, $new)
+{
+    rename($old, $new);
+    echo "Moving file  $old  to  $new".PHP_EOL;
+}
+
+function cleanup()
+{
+    echo 'Removing template directory  ./skel ' .PHP_EOL;
+    rrmdir('./skel');
+}
+
+/**
+ * @param string $targetFile
+ * @param array  $replaces
+ */
+function replacePlaceholders($targetFile, array $replaces)
+{
+    file_put_contents(
+        $targetFile,
+        preg_replace(
+            array_keys($replaces),
+            array_values($replaces),
+            file_get_contents($targetFile)
+        )
+    );
+}
+
+function printLine($character = '-')
+{
+    $cols = (int)getenv('COLUMNS');
+    if ($cols <= 0) {
+        $cols = 70;
+    }
+
+    printf('%s%s', str_repeat($character, $cols), PHP_EOL);
+}
+
+function rrmdir($dir)
+{
+    if (is_dir($dir)) {
+        $objects = scandir($dir, 0);
+        foreach ($objects as $object) {
+            if ($object !== '.' && $object !== '..') {
+                if (is_dir($dir."/".$object)) {
+                    rrmdir($dir."/".$object);
+                } else {
+                    unlink($dir."/".$object);
+                }
+            }
+        }
+        rmdir($dir);
+    }
+}
+// end of file
