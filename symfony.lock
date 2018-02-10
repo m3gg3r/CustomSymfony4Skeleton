@@ -5,6 +5,9 @@
     "behat/gherkin": {
         "version": "v4.5.1"
     },
+    "behat/mink": {
+        "version": "1.7.x-dev"
+    },
     "behat/symfony2-extension": {
         "version": "2.1",
         "recipe": {
