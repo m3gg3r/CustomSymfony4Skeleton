@@ -7,6 +7,12 @@
 phpspec can be run with
 
     vendor/bin/phpspec run
+    
+## behat
+
+behat can be run with
+
+    vendor/bin/behat
 
 ## Easy-Coding-Standard
 
