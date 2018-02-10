@@ -1,25 +1,31 @@
-Raetselweb
-==========
+{{projectname}}
+
+# Tools
+
+## phpspec
+
+phpspec can be run with
+
+    vendor/bin/phpspec run
 
 ## Easy-Coding-Standard
 
-Die Coding Standards für dieses Projekt orientieren sich an PSR-2 und vielen im Symfony-Kontext üblichen Regeln.
+The coding standards heavily inspired by PSR-2 and symfony based projects.
 
-Lokal kann die Prüfung durchgeführt werden mittels:
+Locally simple run:
 
     docker pull dockerizedphp/ecs:2.5
     alias ecs='docker run -ti -v $PWD:/app --rm dockerizedphp/ecs:2.5'
     ecs check ./src
 
-Viele Regelverstöße können automatisch behoben werden:
+Much problems and errors can be fixed automatically:
 
     ecs check --fix ./src
 
-### Regel-Set
+### Rule-Set
 
-Die Regeln zur Überprüfung der Coding Standards sind in der Datei ```easy-coding-standard.neon``` konfiguriert.
+Rules are configured in the file ```easy-coding-standard.neon```
 
-### Weitere Informationen
+### More information
 
-Unter (https://packagist.org/packages/symplify/easy-coding-standard#v2.5.10) können weitere Informationen
-abgerufen werden.
+More information can be found at (https://packagist.org/packages/symplify/easy-coding-standard#v2.5.10) 
