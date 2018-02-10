@@ -5,6 +5,14 @@ default:
                 - FeatureContext:
                     kernel: '@kernel'
                 - Behat\MinkExtension\Context\MinkContext
+                - behatch:context:browser
+                - behatch:context:debug:
+                    screenshotDir: "var/log/screenshots"
+                - behatch:context:system
+                - behatch:context:json
+                - behatch:context:table
+                - behatch:context:rest
+                - behatch:context:xml
 
     extensions:
         Behat\Symfony2Extension:
@@ -16,3 +24,4 @@ default:
             sessions:
                 default:
                     symfony2: ~
+        Behatch\Extension: ~
