@@ -8,3 +8,10 @@ Includes:
 - phpspec
 - behat
 - easy-coding-standards
+
+Create Project
+--------------
+
+To create a project with this skeleton simply use following command:
+
+    composer create-project itsmegger/symfony4-skeleton <projectname>
