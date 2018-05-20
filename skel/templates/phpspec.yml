@@ -1,0 +1,4 @@
+suites:
+  default:
+    namespace: ItsMegger\{{capitalized_projectname}}
+    psr4_prefix: ItsMegger\{{capitalized_projectname}}
