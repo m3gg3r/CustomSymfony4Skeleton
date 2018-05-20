@@ -8,6 +8,6 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */%namespace_block%
 
-final class %name%
+final class %name% implements %name%Interface
 {
 }
