@@ -9,6 +9,9 @@ Includes:
 - behat
 - easy-coding-standards
 
+For more information about the features see the [README](skel/templates/README.md)
+which will be installed to project root.
+
 Create Project
 --------------
 
