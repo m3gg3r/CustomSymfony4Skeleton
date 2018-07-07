@@ -8,8 +8,9 @@ default:
                 - tests/Behat/Resources/services.xml
 
         FriendsOfBehat\SymfonyExtension:
+            env_file: .env
             kernel:
-                class: \Tests\ItsMegger\{{ capitalized_projectname }}\Application\AppKernel
+                class: Tests\ItsMegger\{{ capitalized_projectname }}\Application\AppKernel
                 path: tests/Application/AppKernel.php
                 bootstrap: vendor/autoload.php
 
