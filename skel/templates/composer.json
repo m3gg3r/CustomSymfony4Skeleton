@@ -31,9 +31,13 @@
         "behat/mink": "1.7.x-dev",
         "behat/mink-browserkit-driver": "1.3.x-dev",
         "behat/mink-extension": "^2.3",
-        "behat/symfony2-extension": "^2.1",
         "behatch/contexts": "^3.0",
         "doctrine/doctrine-fixtures-bundle": "^3.0",
+        "friends-of-behat/context-service-extension": "^1.2",
+        "friends-of-behat/cross-container-extension": "^1.1",
+        "friends-of-behat/service-container-extension": "^1.0",
+        "friends-of-behat/symfony-extension": "^1.2",
+        "friends-of-behat/variadic-extension": "^1.1",
         "phpspec/phpspec": "^4.3",
         "se/selenium-server-standalone": "^3.9",
         "symfony/browser-kit": "^4.0",
@@ -53,12 +57,12 @@
     },
     "autoload": {
         "psr-4": {
-            "ItsMegger\\{{capitalized_projectname}}\\": "src/"
+            "ItsMegger\\{{capitalized_projectname}}\\": "src/",
+            "Tests\\ItsMegger\\{{capitalized_projectname}}\\": "tests/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\ItsMegger\\{{capitalized_projectname}}\\": "tests/",
             "Spec\\ItsMegger\\{{capitalized_projectname}}\\": "spec/"
         }
     },
