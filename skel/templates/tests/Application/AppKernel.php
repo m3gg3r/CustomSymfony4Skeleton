@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Tests\ItsMegger\{{capitalized_projectname}}\Application;
 
-use Symfony\Component\HttpKernel\Kernel;
+use ItsMegger\{{capitalized_projectname}}\Kernel;
 
 class AppKernel extends Kernel
 {
