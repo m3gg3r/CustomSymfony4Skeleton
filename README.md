@@ -22,3 +22,8 @@ To create a project with this skeleton simply use following command:
 To create a project with the current master branch (not recommended) use following command:
 
     composer create-project itsmegger/symfony4-skeleton:dev-master <projectname>
+
+Upgrade previous created project
+--------------------------------
+
+See UPGRADE files for more information about updates from a specific version
