@@ -1,5 +1,7 @@
 parameters:
-    secret: "Heron is the best animal in the world!"
+    locale: 'en'
+    secret: 'Heron is the best animal in the world!'
+    kernel.project_dir: '%kernel.root_dir%/../..'
 
 imports:
     - { resource: '../../../../config/packages/' }
