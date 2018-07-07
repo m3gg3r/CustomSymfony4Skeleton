@@ -7,7 +7,7 @@ $capitalizedProjectname = ucfirst($projectname);
 
 $replaces = [
     '/\{\{\s*projectname\s*\}\}/i'              => $projectname,                // {{ projectname }}
-    '/\{\{\s*lowercase_projectnamer\s*\}\}/i'   => $lowercaseProjectname,       // {{ lowercase_projectname }}
+    '/\{\{\s*lowercase_projectname\s*\}\}/i'    => $lowercaseProjectname,       // {{ lowercase_projectname }}
     '/\{\{\s*capitalized_projectname\s*\}\}/i'  => $capitalizedProjectname,     // {{ capitalized_projectname }}
 ];
 
