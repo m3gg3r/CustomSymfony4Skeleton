@@ -53,12 +53,12 @@
     },
     "autoload": {
         "psr-4": {
-            "ItsMegger\\{{capitalized_projectname}}\\": "src/"
+            "ItsMegger\\{{capitalized_projectname}}\\": "src/",
+            "Tests\\ItsMegger\\{{capitalized_projectname}}\\": "tests/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\ItsMegger\\{{capitalized_projectname}}\\": "tests/",
             "Spec\\ItsMegger\\{{capitalized_projectname}}\\": "spec/"
         }
     },
