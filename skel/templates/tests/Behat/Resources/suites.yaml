@@ -1,0 +1,10 @@
+# Put your Behat suites definitions here
+
+default:
+    suites:
+        example:
+            contexts_services:
+                - itsmegger_{{ lowercase_projectname }}.context.general.example
+
+            filters:
+                tags: "@example"
