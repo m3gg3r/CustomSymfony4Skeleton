@@ -24,3 +24,17 @@ behat.yml
 ###> symfony/web-server-bundle ###
 .web-server-pid
 ###< symfony/web-server-bundle ###
+
+###> skeleton files ###
+/skel/templates/bin/
+/skel/templates/config/packages/
+/skel/templates/config/routes/
+/skel/templates/config/bundles.php
+/skel/templates/config/routes.yaml
+/skel/templates/src/
+/skel/templates/templates/
+/skel/templates/translations/
+/skel/templates/.env*
+!/skel/templates/.env.dist
+/skel/templates/phpunit.xml.dist
+###< skeleton files ###
