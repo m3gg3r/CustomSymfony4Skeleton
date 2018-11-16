@@ -1,7 +1,7 @@
 {
     "name": "itsmegger/{{lowercase_projectname}}",
     "type": "project",
-    "license": "proprietary",
+    "license": "MIT",
     "require": {
         "php": "^7.2",
         "ext-iconv": "*",

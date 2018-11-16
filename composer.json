@@ -2,7 +2,7 @@
     "name": "itsmegger/symfony4-skeleton",
     "descripiton": "skeleton to install a custom symfony4 project",
     "type": "project",
-    "license": "proprietary",
+    "license": "MIT",
     "require": {
         "php": "^7.2"
     },
