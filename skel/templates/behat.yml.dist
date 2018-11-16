@@ -1,25 +1,27 @@
-imports:
-    - tests/Behat/Resources/suites.yaml
-
 default:
+    suites:
+        default:
+            contexts:
+                - FeatureContext:
+                    kernel: '@kernel'
+                - Behat\MinkExtension\Context\MinkContext
+                - behatch:context:browser
+                - behatch:context:debug:
+                    screenshotDir: "var/log/screenshots"
+                - behatch:context:system
+                - behatch:context:json
+                - behatch:context:table
+                - behatch:context:rest
+                - behatch:context:xml
+
     extensions:
-        FriendsOfBehat\ContextServiceExtension:
-            imports:
-                - tests/Behat/Resources/services.xml
-
-        FriendsOfBehat\SymfonyExtension:
-            env_file: .env
+        Behat\Symfony2Extension:
             kernel:
-                class: Tests\ItsMegger\{{ capitalized_projectname }}\Application\AppKernel
-                path: tests/Application/AppKernel.php
-                bootstrap: vendor/autoload.php
-
-        FriendsOfBehat\CrossContainerExtension: ~
-
+                bootstrap: features/bootstrap/bootstrap.php
+                class: App\Kernel
         Behat\MinkExtension:
             base_url: "http://example.com/"
             sessions:
                 default:
-                    symfony: ~
-
+                    symfony2: ~
         Behatch\Extension: ~
