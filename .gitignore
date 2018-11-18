@@ -30,7 +30,6 @@ behat.yml
 /skel/templates/config/routes/
 /skel/templates/config/bundles.php
 /skel/templates/config/routes.yaml
-/skel/templates/src/
 /skel/templates/templates/
 /skel/templates/translations/
 /skel/templates/.env*
