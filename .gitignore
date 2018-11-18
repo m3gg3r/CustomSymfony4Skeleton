@@ -26,7 +26,6 @@ behat.yml
 ###< symfony/web-server-bundle ###
 
 ###> skeleton files ###
-/skel/templates/bin/
 /skel/templates/config/packages/
 /skel/templates/config/routes/
 /skel/templates/config/bundles.php
