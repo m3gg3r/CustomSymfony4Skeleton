@@ -26,7 +26,6 @@ behat.yml
 ###< symfony/web-server-bundle ###
 
 ###> skeleton files ###
-/skel/templates/templates/
 /skel/templates/.env*
 !/skel/templates/.env.dist
 /skel/templates/phpunit.xml.dist
