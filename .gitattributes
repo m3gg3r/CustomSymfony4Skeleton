@@ -1,0 +1,2 @@
+composer.lock -diff
+symfony.lock -diff
